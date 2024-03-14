@@ -49,6 +49,26 @@
          .jumbotron .lead {
             color: transparent; /* Make the text transparent */
         }
+                /* Scroll to top button */
+                #scrollToTop {
+            display: none; /* Initially hide the button */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #ff2f00;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+        }
+
+        #scrollToTop:hover {
+            background-color: #ff5e3a;
+        }
     </style>
 </head>
 <body>
@@ -87,14 +107,12 @@
             </div>
         </div>
     </nav><p></p><br><br>
-    <!-- Welcome jumbotron -->
-    <div class="jumbotron jumbotron-fluid text-center">
-        <div class="container">
-            <h1 class="display-4"></h1>
-            <p class="lead">We are delighted to have you here. Explore our offerings and empower your educational journey.</p>
-        </div>
-    </div>
 
+    <!-- Scroll to top button -->
+    <button id="scrollToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button><center>
+ <!-- Image for exams section -->
+ <img src="OSEB CHARGES-1_page-0001.jpg" alt="OSEB Logo" class="img-fluid">
+</center>
     <section id="exams" class="container mt-5">
         <h3>Exams</h3>
         <p>Prepare for your academic journey with our comprehensive range of exams. Thousands of teachers have utilized our exams and witnessed remarkable improvements in their pupils' performance. With a wide variety of subjects and levels covered, our exams are designed to challenge and motivate learners to excel. Avail the soft copy of our exams at a nominal price of only Shs. 60,000.</p>
@@ -162,11 +180,37 @@
     </section>
     
 
-    <!-- Bootstrap JS and Popper.js scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<br><center>
+       <!-- Bootstrap JS and jQuery -->
+       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+       <!-- Font Awesome -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+       <!-- Custom JavaScript for scroll to top button -->
+       <script>
+          // Get the button
+        var scrollToTopBtn = document.getElementById("scrollToTop");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function scrollToTop() {
+    // Scroll to top smoothly
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+       </script><br><center>
     <!-- Footer -->
     <footer class="footer" id="contact">
         <div class="container">
