@@ -268,6 +268,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
     <!-- Custom JavaScript for scroll to top button -->
     <script>
+               // Smooth scrolling for navigation links
+               document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
         // Trigger confetti on page load
         window.addEventListener('load', function() {
             startConfetti();
