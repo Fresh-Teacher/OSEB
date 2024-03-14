@@ -110,6 +110,19 @@
     .btn-shakes {
         animation: shakes 1s infinite;
     }
+        /* Heart animation */
+        @keyframes heartbeat {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+
+    .heart {
+        display: inline-block;
+        animation: heartbeat 1s infinite;
+        color: red; /* Add color property for red color */
+
+    }
     </style>
 </head>
 
@@ -424,6 +437,8 @@
         <footer class="footer" id="contact">
             <div class="container">
                 <p>&copy; 2024 Outreach Schools Examinations Board</p>
+                <p>Coded with <span class="heart">&hearts;</span> by Fresh Teacher</p>
+
             </div>
         </footer>
         
