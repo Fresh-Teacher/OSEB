@@ -36,6 +36,19 @@
         .btn-shake {
             animation: shake 0.9s infinite;
         }
+
+        /* Background image for jumbotron */
+        .jumbotron {
+            background-image: url('OSEB CHARGES-1_page-0001.jpg'); /* Replace 'your-image.jpg' with the path to your image */
+            background-size: cover;
+            background-position: center;
+            color: #fff; /* Text color for better readability */
+        }
+
+         /* Black text in the jumbotron */
+         .jumbotron .lead {
+            color: transparent; /* Make the text transparent */
+        }
     </style>
 </head>
 <body>
@@ -67,15 +80,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#holiday_packages">Holiday Packages</a>
                     </li>
-                    
                     <li class="nav-item">
                         <a class="nav-link" href="#learners_workbooks"> Workbooks</a>
                     </li>
-                   
                 </ul>
             </div>
         </div>
-    </nav><br>
+    </nav><p></p><br><br>
+    <!-- Welcome jumbotron -->
+    <div class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+            <h1 class="display-4"></h1>
+            <p class="lead">We are delighted to have you here. Explore our offerings and empower your educational journey.</p>
+        </div>
+    </div>
 
     <section id="exams" class="container mt-5">
         <h3>Exams</h3>
