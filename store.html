@@ -244,7 +244,7 @@ footer.footer {
         <div class="container">
             <div class="search-box">
                 <form action="" onsubmit="return false">
-                    <input type="text" id="search" placeholder="🔎 Search all products here..." />
+                    <input type="text" id="search" placeholder="🔎 Search all products here...", />
                 </form>
             </div>
             <div class="filter-box">
@@ -288,13 +288,14 @@ footer.footer {
   <!-- Template for Product Card -->
   <script id="product-card-template" type="text/template">
     <div class="store-product {{ category }}">
-      <div class="product-details">
-        <h2>{{ name }}</h2>
-        <p>{{ price }}</p>
-        <a href="{{ link }}">
-          <i class="fas fa-shopping-cart"></i> <b>Order Now!</b>
-        </a>
-      </div>
+<div class="product-details">
+    <h2>{{ name }}</h2>
+    <p><span class="price">{{ price }}</span></p>
+    <a href="{{ button_link }}">
+        <i class="fas fa-shopping-cart"></i> <span class="button-text">{{ button_text }}</span>
+    </a>
+</div>
+
     </div>
   </script>
   
@@ -307,147 +308,222 @@ footer.footer {
       "category": "exams",
       "name": "P.1 Science Exam",
       "price": "UGX. 60,000",
-      "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.1%20Science%20Exam."
-    },
+      "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.1%20Science%20Exam.",
+       "isFree": false
+  },
   {
     "category": "exams",
     "name": "P.1 Science Exam",
     "price": "UGX. 60,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.1%20Science%20Exam."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.1%20Science%20Exam.",
+     "isFree": false
   },
   {
     "category": "schemes_of_work",
     "name": "P7 Mathematics Schemes of Work",
     "price": "UGX. 5,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Mathematics%20Schemes%20of%20Work."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Mathematics%20Schemes%20of%20Work.",
+     "isFree": false
   },
   {
     "category": "textbooks",
     "name": "P3 English Textbook",
     "price": "UGX. 45,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P3%20English%20Textbook."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P3%20English%20Textbook.",
+     "isFree": false
   },
   {
     "category": "lesson_notes",
     "name": "P6 History Lesson Notes",
     "price": "UGX. 10,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20History%20Lesson%20Notes."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20History%20Lesson%20Notes.",
+     "isFree": false
   },
   {
     "category": "holiday_packages",
     "name": "Christmas Holiday Package",
     "price": "UGX. 80,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Christmas%20Holiday%20Package."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Christmas%20Holiday%20Package.",
+     "isFree": false
   },
   {
     "category": "weekly_homeworks",
     "name": "Week 1 Homeworks",
     "price": "UGX. 15,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Week%201%20Homeworks."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Week%201%20Homeworks.",
+     "isFree": false
   },
   {
     "category": "topical_questions",
     "name": "Chemistry Topical Questions",
     "price": "UGX. 25,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Chemistry%20Topical%20Questions."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Chemistry%20Topical%20Questions.",
+     "isFree": false
   },
   {
     "category": "learners_workbooks",
     "name": "Physics Learner's Workbook",
     "price": "UGX. 30,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Physics%20Learner's%20Workbook."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Physics%20Learner's%20Workbook.",
+     "isFree": false
   },
   {
     "category": "lesson_plan_templates",
     "name": "Geography Lesson Plan Templates",
     "price": "UGX. 8,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Geography%20Lesson%20Plan%20Templates."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Geography%20Lesson%20Plan%20Templates.",
+     "isFree": false
   },
   {
     "category": "ple_pamphlets",
     "name": "P6 PLE Preparation Pamphlets",
     "price": "UGX. 20,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20PLE%20Preparation%20Pamphlets."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20PLE%20Preparation%20Pamphlets.",
+     "isFree": false
   },
   {
     "category": "p7_topical_questions",
     "name": "P.7 English Topical Questions",
     "price": "UGX. 25,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.7%20English%20Topical%20Questions."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.7%20English%20Topical%20Questions.",
+     "isFree": false
   },
   {
     "category": "p7_special_sets_series",
     "name": "P7 Special Sets Series",
     "price": "UGX. 15,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Special%20Sets%20Series."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Special%20Sets%20Series.",
+     "isFree": false
   },
   {
     "category": "interview_exams",
     "name": "Teacher's Interview Exams",
     "price": "UGX. 10,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Teacher's%20Interview%20Exams."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Teacher's%20Interview%20Exams.",
+     "isFree": false
   },
   {
     "category": "ple_spot_exams",
     "name": "PLE Spot Exams",
     "price": "UGX. 12,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20PLE%20Spot%20Exams."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20PLE%20Spot%20Exams.",
+     "isFree": false
   },
   {
     "category": "book_cover_hardcopies",
     "name": "Book Cover Hardcopies",
     "price": "UGX. 200 and 100",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Book%20Cover%20Hardcopies."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Book%20Cover%20Hardcopies.",
+     "isFree": false
   },
   {
     "category": "teachers_interview_papers",
     "name": "Teacher's Interview Papers",
     "price": "UGX. 15,000",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Teacher's%20Interview%20Papers."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Teacher's%20Interview%20Papers.",
+     "isFree": false
   },
   {
     "category": "weekend_tests",
     "name": "Weekend Tests",
     "price": "UGX. 5,000 per class",
-    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Weekend%20Tests."
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Weekend%20Tests.",
+     "isFree": false
+  },
+  {
+    "category": "exams",
+    "name": "P.1 Science Exam",
+    "price": "UGX. 60,000",
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.1%20Science%20Exam.",
+    "isFree": false
+  },
+  {
+    "category": "schemes_of_work",
+    "name": "P7 Mathematics Schemes of Work",
+    "price": "UGX. 5,000",
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Mathematics%20Schemes%20of%20Work.",
+    "isFree": false
+  },
+  {
+    "category": "textbooks",
+    "name": "P3 English Textbook",
+    "price": "UGX. 45,000",
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P3%20English%20Textbook.",
+    "isFree": false
+  },
+  {
+    "category": "lesson_notes",
+    "name": "P6 History Lesson Notes",
+    "price": "UGX. 10,000",
+    "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20History%20Lesson%20Notes.",
+    "isFree": false
+  },
+  {
+    "category": "holiday_packages",
+    "name": "Christmas Holiday Package",
+    "price": "UGX. 0", // Free item
+    "link": "scheme.pdf",
+    "isFree": true
+  },
+  {
+    "category": "weekly_homeworks",
+    "name": "Week 1 Homeworks",
+    "price": "UGX. 0", // Free item
+    "link": "notes.pdf",
+    "isFree": true
   }
   ];
   
-  // Function to render product cards
-  function renderProductCards() {
-    const storeProductsContainer = document.getElementById('store-products');
-    const productCardTemplate = document.getElementById('product-card-template').innerHTML;
-  
-    let productCardsHTML = '';
-    products.forEach(product => {
-      productCardsHTML += productCardTemplate
-        .replace('{{ category }}', product.category)
-        .replace('{{ name }}', product.name)
-        .replace('{{ price }}', product.price)
-        .replace('{{ link }}', product.link);
-    });
-  
-    storeProductsContainer.innerHTML = productCardsHTML;
-  }
-  
-  // Call the function to render product cards
-  renderProductCards();
-  
+// Function to render product cards
+function renderProductCards() {
+  const storeProductsContainer = document.getElementById('store-products');
+  const productCardTemplate = document.getElementById('product-card-template').innerHTML;
+
+  let productCardsHTML = '';
+  products.forEach(product => {
+    // Modify button text and link based on whether the item is free or not
+    let buttonText, buttonLink;
+    if (product.isFree) {
+      buttonText = "FREE DOWNLOAD";
+      buttonLink = product.link;
+    } else {
+      buttonText = "Order Now!";
+      buttonLink = product.link;
+    }
+
+    // Capitalize item name
+    const name = product.name.toUpperCase();
+
+    productCardsHTML += productCardTemplate
+      .replace('{{ category }}', product.category)
+      .replace('{{ name }}', name)
+      .replace('{{ price }}', product.isFree ? "FREE" : product.price) // Replace price with "FREE" if item is free
+      .replace('{{ button_text }}', buttonText)
+      .replace('{{ button_link }}', buttonLink);
+  });
+
+  storeProductsContainer.innerHTML = productCardsHTML;
+}
 
 // Function to render cards from items
 function renderCards(items) {
-    const app = document.getElementById('app');
-    let html = '';
-    items.forEach(item => {
-        html += generateCard(item);
-    });
-    app.innerHTML = html;
+  const app = document.getElementById('app');
+  let html = '';
+  items.forEach(item => {
+    html += generateCard(item);
+  });
+  app.innerHTML = html;
 }
 
 // Render cards when the page loads
 window.onload = function () {
-    renderCards(items);
+  if (typeof products !== 'undefined') {
+    renderProductCards(); // Render product cards if products variable is defined
+  } else {
+    renderCards(items); // Render normal cards if products variable is not defined
+  }
 };
+
 
         // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
