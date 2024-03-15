@@ -175,11 +175,27 @@ footer.footer {
         color: red; /* Add color property for red color */
 
     }
+
+    .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    float: left;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
         </style>
 </head>
 
 <body>
-    
+    <div id="app" class="container">
+        <!-- Cards will be dynamically generated here -->
+    </div>
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom">
         <div class="container">
@@ -255,174 +271,182 @@ footer.footer {
         </div>
     </header>
 <br>
-   <!-- Main Content -->
-   <main>
+ <!-- Main Content -->
+<main>
     <div class="main-container">
-        <section class="container" id="store-products">
-<!-- Product - Exams -->
-<div class="store-product exams">
-<div class="product-details">
-    <h2>P.1 Science Exam</h2>
-    <p>UGX. 60,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.1%20Science%20Exam.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - Schemes of Work -->
-<div class="store-product schemes_of_work">
-<div class="product-details">
-    <h2>P7 Mathematics Schemes of Work</h2>
-    <p>UGX. 5,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Mathematics%20Schemes%20of%20Work.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - Textbooks -->
-<div class="store-product textbooks">
-<div class="product-details">
-    <h2>P3 English Textbook</h2>
-    <p>UGX. 45,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P3%20English%20Textbook.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - Lesson Notes -->
-<div class="store-product lesson_notes">
-<div class="product-details">
-    <h2>P6 History Lesson Notes</h2>
-    <p>UGX. 10,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20History%20Lesson%20Notes.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - Holiday Packages -->
-<div class="store-product holiday_packages">
-<div class="product-details">
-    <h2>Christmas Holiday Package</h2>
-    <p>UGX. 80,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Christmas%20Holiday%20Package.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - Weekly Homeworks -->
-<div class="store-product weekly_homeworks">
-<div class="product-details">
-    <h2>Week 1 Homeworks</h2>
-    <p>UGX. 15,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Week%201%20Homeworks.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - Topical Questions -->
-<div class="store-product topical_questions">
-<div class="product-details">
-    <h2>Chemistry Topical Questions</h2>
-    <p>UGX. 25,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Chemistry%20Topical%20Questions.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - Learner's Workbooks -->
-<div class="store-product learners_workbooks">
-<div class="product-details">
-    <h2>Physics Learner's Workbook</h2>
-    <p>UGX. 30,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Physics%20Learner's%20Workbook.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - Lesson Plan Templates -->
-<div class="store-product lesson_plan_templates">
-<div class="product-details">
-    <h2>Geography Lesson Plan Templates</h2>
-    <p>UGX. 8,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Geography%20Lesson%20Plan%20Templates.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - PLE Pamphlets -->
-<div class="store-product ple_pamphlets">
-<div class="product-details">
-    <h2>P6 PLE Preparation Pamphlets</h2>
-    <p>UGX. 20,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20PLE%20Preparation%20Pamphlets.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - P.7 Topical Questions -->
-<div class="store-product p7_topical_questions">
-<div class="product-details">
-    <h2>P.7 English Topical Questions</h2>
-    <p>UGX. 25,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.7%20English%20Topical%20Questions.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - P7 Special Sets Series -->
-<div class="store-product p7_special_sets_series">
-<div class="product-details">
-    <h2>P7 Special Sets Series</h2>
-    <p>UGX. 15,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Special%20Sets%20Series.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - Interview Exams -->
-<div class="store-product interview_exams">
-<div class="product-details">
-    <h2>Teacher's Interview Exams</h2>
-    <p>UGX. 10,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Teacher's%20Interview%20Exams.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - PLE Spot Exams -->
-<div class="store-product ple_spot_exams">
-<div class="product-details">
-    <h2>PLE Spot Exams</h2>
-    <p>UGX. 12,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20PLE%20Spot%20Exams.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - Book Cover Hardcopies -->
-<div class="store-product book_cover_hardcopies">
-<div class="product-details">
-    <h2>Book Cover Hardcopies</h2>
-    <p>UGX. 200 and 100</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Book%20Cover%20Hardcopies.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - Teacher's Interview Papers -->
-<div class="store-product teachers_interview_papers">
-<div class="product-details">
-    <h2>Teacher's Interview Papers</h2>
-    <p>UGX. 15,000</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Teacher's%20Interview%20Papers.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Product - Weekend Tests -->
-<div class="store-product weekend_tests">
-<div class="product-details">
-    <h2>Weekend Tests</h2>
-    <p>UGX. 5,000 per class</p>
-    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Weekend%20Tests.">
-        <i class="fas fa-shopping-cart"></i> Order Now!</a>
-</div>
-</div>
-<!-- Add other products here -->            </section>
-<div class="container no-result">
-<p>No more products to display! Try searching using a different name or contact us on 0775787978...</p><br><br>
-</div>
-</div>
-</main>
+      <section class="container" id="store-products">
+        <!-- Generated Product Cards will be inserted here -->
+      </section>
+      <div class="container no-result">
+        <p>No more products to display! Try searching using a different name or contact us on 0775787978...</p><br><br>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Template for Product Card -->
+  <script id="product-card-template" type="text/template">
+    <div class="store-product {{ category }}">
+      <div class="product-details">
+        <h2>{{ name }}</h2>
+        <p>{{ price }}</p>
+        <a href="{{ link }}">
+          <i class="fas fa-shopping-cart"></i> Order Now!
+        </a>
+      </div>
+    </div>
+  </script>
+  
 
+<script>
 
+  // JSON data for products
+  const products = [
+    {
+      "category": "exams",
+      "name": "P.1 Science Exam",
+      "price": "UGX. 60,000",
+      "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.1%20Science%20Exam."
+    },
+  {
+    "category": "exams",
+    "name": "P.1 Science Exam",
+    "price": "UGX. 60,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.1%20Science%20Exam."
+  },
+  {
+    "category": "schemes_of_work",
+    "name": "P7 Mathematics Schemes of Work",
+    "price": "UGX. 5,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Mathematics%20Schemes%20of%20Work."
+  },
+  {
+    "category": "textbooks",
+    "name": "P3 English Textbook",
+    "price": "UGX. 45,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P3%20English%20Textbook."
+  },
+  {
+    "category": "lesson_notes",
+    "name": "P6 History Lesson Notes",
+    "price": "UGX. 10,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20History%20Lesson%20Notes."
+  },
+  {
+    "category": "holiday_packages",
+    "name": "Christmas Holiday Package",
+    "price": "UGX. 80,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Christmas%20Holiday%20Package."
+  },
+  {
+    "category": "weekly_homeworks",
+    "name": "Week 1 Homeworks",
+    "price": "UGX. 15,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Week%201%20Homeworks."
+  },
+  {
+    "category": "topical_questions",
+    "name": "Chemistry Topical Questions",
+    "price": "UGX. 25,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Chemistry%20Topical%20Questions."
+  },
+  {
+    "category": "learners_workbooks",
+    "name": "Physics Learner's Workbook",
+    "price": "UGX. 30,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Physics%20Learner's%20Workbook."
+  },
+  {
+    "category": "lesson_plan_templates",
+    "name": "Geography Lesson Plan Templates",
+    "price": "UGX. 8,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Geography%20Lesson%20Plan%20Templates."
+  },
+  {
+    "category": "ple_pamphlets",
+    "name": "P6 PLE Preparation Pamphlets",
+    "price": "UGX. 20,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20PLE%20Preparation%20Pamphlets."
+  },
+  {
+    "category": "p7_topical_questions",
+    "name": "P.7 English Topical Questions",
+    "price": "UGX. 25,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.7%20English%20Topical%20Questions."
+  },
+  {
+    "category": "p7_special_sets_series",
+    "name": "P7 Special Sets Series",
+    "price": "UGX. 15,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Special%20Sets%20Series."
+  },
+  {
+    "category": "interview_exams",
+    "name": "Teacher's Interview Exams",
+    "price": "UGX. 10,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Teacher's%20Interview%20Exams."
+  },
+  {
+    "category": "ple_spot_exams",
+    "name": "PLE Spot Exams",
+    "price": "UGX. 12,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20PLE%20Spot%20Exams."
+  },
+  {
+    "category": "book_cover_hardcopies",
+    "name": "Book Cover Hardcopies",
+    "price": "UGX. 200 and 100",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Book%20Cover%20Hardcopies."
+  },
+  {
+    "category": "teachers_interview_papers",
+    "name": "Teacher's Interview Papers",
+    "price": "UGX. 15,000",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Teacher's%20Interview%20Papers."
+  },
+  {
+    "category": "weekend_tests",
+    "name": "Weekend Tests",
+    "price": "UGX. 5,000 per class",
+    "link": "https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Weekend%20Tests."
+  }
+  ];
+  
+  // Function to render product cards
+  function renderProductCards() {
+    const storeProductsContainer = document.getElementById('store-products');
+    const productCardTemplate = document.getElementById('product-card-template').innerHTML;
+  
+    let productCardsHTML = '';
+    products.forEach(product => {
+      productCardsHTML += productCardTemplate
+        .replace('{{ category }}', product.category)
+        .replace('{{ name }}', product.name)
+        .replace('{{ price }}', product.price)
+        .replace('{{ link }}', product.link);
+    });
+  
+    storeProductsContainer.innerHTML = productCardsHTML;
+  }
+  
+  // Call the function to render product cards
+  renderProductCards();
+  
 
-    <!-- JavaScript -->
-    <script>
+// Function to render cards from items
+function renderCards(items) {
+    const app = document.getElementById('app');
+    let html = '';
+    items.forEach(item => {
+        html += generateCard(item);
+    });
+    app.innerHTML = html;
+}
+
+// Render cards when the page loads
+window.onload = function () {
+    renderCards(items);
+};
+
         // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
