@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSEB Online Store</title>
+    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include Bootstrap JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        #store-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 2rem;
+}
+
+        footer.footer {
+    background-color: #fff;
+    padding: 10px 0; /* Adjust the padding to reduce the height */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Apply shadow to the top of the footer */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px; /* Reduce the font size to fit the reduced height */
+}
+.footer p {
+    margin-top: 0.5px; /* Adjust the top margin */
+    margin-bottom: 2px; /* Adjust the bottom margin */
+}
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .search-box {
+            margin-bottom: 20px;
+        }
+
+        .search-box input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .filter-box select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        /* .main-container {
+            padding: 20px;
+        } */
+
+        .store-product {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .product-details {
+            padding: 20px;
+        }
+
+        .product-details h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .product-details p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .product-details a {
+            display: inline-block;
+            background-color: #ff5f6d;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-details a:hover {
+            background-color: #e64c59;
+        }
+
+        .no-result {
+            text-align: center;
+            font-size: 18px;
+            color: #888;
+        }   
+         /* Custom CSS for navbar color */
+         .navbar-custom {
+            background-color: #ff2f00;
+            /* Change this color to your desired color */
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-nav .nav-link {
+            color: #ffffff;
+            /* Change this color to your desired color */
+        }
+
+        .navbar-brand img {
+            max-height: 30px;
+            /* Adjust the max-height as needed */
+        }
+  /* Scroll to top button */
+  #scrollToTop {
+            display: none;
+            /* Initially hide the button */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #ff2f00;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 0.5px;
+            border-radius: 50%;
+        }
+
+        #scrollToTop:hover {
+            background-color: #ff5e3a;
+        }
+          /* Heart animation */
+          @keyframes heartbeat {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+
+    .heart {
+        display: inline-block;
+        animation: heartbeat 1s infinite;
+        color: red; /* Add color property for red color */
+
+    }
+        </style>
+</head>
+
+<body>
+    
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="OSEB_CHARGES-1_page-0001-removebg-preview.png" alt="Logo">
+                <!-- Replace 'your-logo.png' with the path to your logo -->
+                OSEB
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#exams">Exams <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#schemes_of_work">Schemes of Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#textbooks">Textbooks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#lesson_notes">Lesson Notes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#holiday_packages">Holiday Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#learners_workbooks"> Workbooks</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <p></p><br><br>
+
+    <!-- Scroll to top button -->
+    <button id="scrollToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container">
+            <div class="search-box">
+                <form action="" onsubmit="return false">
+                    <input type="text" id="search" placeholder="Search all products here 🔎" />
+                </form>
+            </div>
+            <div class="filter-box">
+                <div class="filter-box">
+                    <select id="category-filter" onchange="filterCategory(event)">
+                        <option value="all">All Products</option>
+                        <option value="exams">Exams</option>
+                        <option value="schemes_of_work">Schemes of Work</option>
+                        <option value="textbooks">Textbooks</option>
+                        <option value="lesson_notes">Lesson Notes</option>
+                        <option value="holiday_packages">Holiday Packages</option>
+                        <option value="weekly_homeworks">Weekly Homeworks</option>
+                        <option value="topical_questions">Topical Questions</option>
+                        <option value="learners_workbooks">Learner's Workbooks</option>
+                        <option value="lesson_plan_templates">Lesson Plan Templates</option>
+                        <option value="ple_pamphlets">PLE Pamphlets</option>
+                        <option value="p7_topical_questions">P.7 Topical Questions</option>
+                        <option value="p7_special_sets_series">P7 Special Sets Series</option>
+                        <option value="interview_exams">Interview Exams</option>
+                        <option value="ple_spot_exams">PLE Spot Exams</option>
+                        <option value="book_cover_hardcopies">Book Cover Hardcopies</option>
+                        <option value="teachers_interview_papers">Teacher's Interview Papers</option>
+                        <option value="weekend_tests">Weekend Tests</option>
+                    </select>
+            </div>
+        </div>
+    </header>
+<br>
+   <!-- Main Content -->
+   <main>
+    <div class="main-container">
+        <section class="container" id="store-products">
+<!-- Product - Exams -->
+<div class="store-product exams">
+<div class="product-details">
+    <h2>P.1 Science Exam</h2>
+    <p>UGX. 60,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.1%20Science%20Exam.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - Schemes of Work -->
+<div class="store-product schemes_of_work">
+<div class="product-details">
+    <h2>P7 Mathematics Schemes of Work</h2>
+    <p>UGX. 5,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Mathematics%20Schemes%20of%20Work.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - Textbooks -->
+<div class="store-product textbooks">
+<div class="product-details">
+    <h2>P3 English Textbook</h2>
+    <p>UGX. 45,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P3%20English%20Textbook.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - Lesson Notes -->
+<div class="store-product lesson_notes">
+<div class="product-details">
+    <h2>P6 History Lesson Notes</h2>
+    <p>UGX. 10,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20History%20Lesson%20Notes.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - Holiday Packages -->
+<div class="store-product holiday_packages">
+<div class="product-details">
+    <h2>Christmas Holiday Package</h2>
+    <p>UGX. 80,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Christmas%20Holiday%20Package.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - Weekly Homeworks -->
+<div class="store-product weekly_homeworks">
+<div class="product-details">
+    <h2>Week 1 Homeworks</h2>
+    <p>UGX. 15,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Week%201%20Homeworks.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - Topical Questions -->
+<div class="store-product topical_questions">
+<div class="product-details">
+    <h2>Chemistry Topical Questions</h2>
+    <p>UGX. 25,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Chemistry%20Topical%20Questions.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - Learner's Workbooks -->
+<div class="store-product learners_workbooks">
+<div class="product-details">
+    <h2>Physics Learner's Workbook</h2>
+    <p>UGX. 30,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Physics%20Learner's%20Workbook.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - Lesson Plan Templates -->
+<div class="store-product lesson_plan_templates">
+<div class="product-details">
+    <h2>Geography Lesson Plan Templates</h2>
+    <p>UGX. 8,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Geography%20Lesson%20Plan%20Templates.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - PLE Pamphlets -->
+<div class="store-product ple_pamphlets">
+<div class="product-details">
+    <h2>P6 PLE Preparation Pamphlets</h2>
+    <p>UGX. 20,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20PLE%20Preparation%20Pamphlets.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - P.7 Topical Questions -->
+<div class="store-product p7_topical_questions">
+<div class="product-details">
+    <h2>P.7 English Topical Questions</h2>
+    <p>UGX. 25,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.7%20English%20Topical%20Questions.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - P7 Special Sets Series -->
+<div class="store-product p7_special_sets_series">
+<div class="product-details">
+    <h2>P7 Special Sets Series</h2>
+    <p>UGX. 15,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Special%20Sets%20Series.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - Interview Exams -->
+<div class="store-product interview_exams">
+<div class="product-details">
+    <h2>Teacher's Interview Exams</h2>
+    <p>UGX. 10,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Teacher's%20Interview%20Exams.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - PLE Spot Exams -->
+<div class="store-product ple_spot_exams">
+<div class="product-details">
+    <h2>PLE Spot Exams</h2>
+    <p>UGX. 12,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20PLE%20Spot%20Exams.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - Book Cover Hardcopies -->
+<div class="store-product book_cover_hardcopies">
+<div class="product-details">
+    <h2>Book Cover Hardcopies</h2>
+    <p>UGX. 200 and 100</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Book%20Cover%20Hardcopies.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - Teacher's Interview Papers -->
+<div class="store-product teachers_interview_papers">
+<div class="product-details">
+    <h2>Teacher's Interview Papers</h2>
+    <p>UGX. 15,000</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Teacher's%20Interview%20Papers.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Product - Weekend Tests -->
+<div class="store-product weekend_tests">
+<div class="product-details">
+    <h2>Weekend Tests</h2>
+    <p>UGX. 5,000 per class</p>
+    <a href="https://api.whatsapp.com/send?phone=+256756286777&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Weekend%20Tests.">
+        <i class="fas fa-shopping-cart"></i> Order Now!</a>
+</div>
+</div>
+<!-- Add other products here -->            </section>
+<div class="container no-result">
+<p>No more products to display! Try searching using a different name or contact us on 0775787978...</p><br><br>
+</div>
+</div>
+</main>
+
+
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+function filterCategory(event) {
+    var category = document.getElementById("category-filter").value;
+    var products = document.getElementsByClassName("store-product");
+
+    if (category === "all") {
+        for (var i = 0; i < products.length; i++) {
+            products[i].style.display = "block";
+        }
+    } else {
+        for (var i = 0; i < products.length; i++) {
+            var product = products[i];
+            if (product.classList.contains(category)) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+        }
+    }
+}
+
+
+// SEARCH FILTER
+const search = document.getElementById("search");
+const productName = document.querySelectorAll(".product-details h2");
+const noResult = document.querySelector(".no-result");
+
+search.addEventListener("keyup", filterProducts);
+
+function filterProducts(e) {
+    const text = e.target.value.toLowerCase();
+
+    productName.forEach((product) => {
+        const item = product.textContent;
+
+        if (item.toLowerCase().indexOf(text) != -1) {
+            product.parentElement.parentElement.style.display = "block";
+            noResult.style.display = "none";
+        } else {
+            product.parentElement.parentElement.style.display = "none";
+            noResult.style.display = "block";
+        }
+    });
+}
+
+// Get the button
+var scrollToTopBtn = document.getElementById("scrollToTop");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function scrollToTop() {
+    // Scroll to top smoothly
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+    </script>
+    <!-- <script src="script.js"></script> -->
+    <center>
+        <!-- Footer -->
+        <footer class="footer" id="contact">
+            <div class="container">
+                <p>&copy; 2024 OSEB</p>
+                <p>Coded with <span class="heart">&hearts;</span> by <a href="https://fresh-teacher.github.io"> Fresh Teacher</a></p>
+
+            </div>
+        </footer>
+        
+    </center>
+</body>
+
+</html>
