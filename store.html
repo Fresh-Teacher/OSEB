@@ -1,3 +1,4 @@
+I also need the pop up modal to only appear for files which are not free or the ones in json that have "isFree": false, but if a file is free in json then it should not show this modal when it has "isFree": true,
 <!DOCTYPE html>
 <html lang="en">
 
@@ -298,7 +299,7 @@ footer.footer {
         </div>
         <div class="modal-footer">
           <!-- Button to request for password -->
-          <a href="whatsapp://send?phone=+256775787978&text=Hello,%20I%20hope%20you%20are%20doing%20well.%20I%have%20downloaded%20a%20file%20from%20the%20OSEB%App%20and%20it%20appears%20to%20be%20password-protected.%20Could%20you%20kindly%20provide%20me%20with%20the%20password%20to%20access%20it?%20Thank%20you%20very%20much%20for%20your%20assistance.%20Best%20regards." class="btn btn-primary">REQUEST FOR PASSWORD 🔐</a>
+          <a href="whatsapp://send?phone=+256775787978&text=Hello,%20I%20hope%20you%20are%20doing%20well.%20I%20have%20downloaded%20a%20file%20from%20the%20OSEB%App%20and%20it%20appears%20to%20be%20password-protected.%20Could%20you%20kindly%20provide%20me%20with%20the%20password%20to%20access%20it?%20Thank%20you%20very%20much%20for%20your%20assistance.%20Best%20regards." class="btn btn-primary">REQUEST FOR PASSWORD 🔐</a>
           <button type="button" class="btn btn-danger" data-dismiss="modal">IGNORE</button>
 
         </div>
@@ -322,6 +323,7 @@ footer.footer {
 </script>
 
 <script>
+// JSON data for products
 // JSON data for products
 const products = [
 {
@@ -474,14 +476,14 @@ const products = [
 {
   "category": "holiday_packages",
   "name": "Christmas Holiday Package",
-  "price": "UGX. 0", // Free item
+  "price": "UGX. 500", // Free item
   "isFree": true,
   "pdflink": "P1_Science_Exam.pdf", // PDF file link
 },
 {
   "category": "weekly_homeworks",
   "name": "Week 1 Homeworks",
-  "price": "UGX. 0", // Free item
+  "price": "UGX. 500", // Free item
   "link": "notes.pdf",
   "isFree": true,
   "pdflink": "P1_Science_Exam.pdf" // PDF file link
