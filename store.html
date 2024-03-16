@@ -282,62 +282,41 @@ footer.footer {
         <p>No more products to display! Try searching using a different name or contact us on <a href="tel:+256775787978"><br>0775787978 </a></p><br><br>
     </div>
 </main>
-<!-- Password Modal -->
-<div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="passwordModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="passwordModalLabel">Password Protected File</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body" id="modalBodyText">
-                The file you have downloaded is password protected. Please request the password via WhatsApp:
-            </div>
-            <div class="modal-footer">
-                <a id="whatsappLink" href="#" class="btn btn-primary" target="_blank">Request for Password</a>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+
+<!-- Bootstrap Warning Modal -->
+<div class="modal fade" id="passwordProtectedModal" tabindex="-1" role="dialog" aria-labelledby="passwordProtectedModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="passwordProtectedModalLabel">File Password Protected</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-    </div>
-</div>
-
-<!-- Free File Modal -->
-<div class="modal fade" id="freeFileModal" tabindex="-1" aria-labelledby="freeFileModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="freeFileModalLabel">Free File Downloaded</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                The file you have downloaded is free.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+        <div class="modal-body">
+          The file you have downloaded is password protected.
         </div>
+        <div class="modal-footer">
+          <!-- Button to request for password -->
+          <a href="whatsapp://send?phone=+256775787978&text=Requesting%20password%20for%20file%20download" class="btn btn-primary">REQUEST FOR PASSWORD 🔐</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">CANCEL</button>
+
+        </div>
+      </div>
     </div>
-</div>
-
-
+  </div>
   
-<!-- Template for Product Card -->
-<script id="product-card-template" type="text/template">
+  
+  <!-- Template for Product Card -->
+  <script id="product-card-template" type="text/template">
     <div class="store-product {{ category }}">
-        <div class="product-details">
-            <h2>{{ name }}</h2>
-            <p><span class="price">{{ price }}</span></p>
-            <a href="{{ pdflink }}" download>
-                <i class="fas fa-download"></i> <span class="button-text">Download PDF</span>
-            </a>
-        </div>
-    </div>
-</script>
-
+<div class="product-details">
+    <h2>{{ name }}</h2>
+    <p><span class="price">{{ price }}</span></p>
+    <a href="{{ button_link }}">
+        <i class="fas fa-shopping-cart"></i> <span class="button-text">{{ button_text }}</span>
+    </a>
+</div>
 
     </div>
 </script>
@@ -349,7 +328,6 @@ const products = [
   "category": "exams",
   "name": "P.1 Science Exam",
   "price": "UGX. 60,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.1%20Science%20Exam.",
   "isFree": true,
   "pdflink": "OSEB CHARGES.pdf", // PDF file link
 },
@@ -357,7 +335,6 @@ const products = [
   "category": "schemes_of_work",
   "name": "P7 Mathematics Schemes of Work",
   "price": "UGX. 5,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Mathematics%20Schemes%20of%20Work.",
    "isFree": false,
   "pdflink": "P1_Sciksence_Exam.pdf", // PDF file link
 },
@@ -365,7 +342,6 @@ const products = [
   "category": "textbooks",
   "name": "P3 English Textbook",
   "price": "UGX. 45,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P3%20English%20Textbook.",
   "isFree": true,
   "pdflink": "P1_Sciejdknce_Exam.pdf", // PDF file link
 },
@@ -373,7 +349,6 @@ const products = [
   "category": "lesson_notes",
   "name": "P6 History Lesson Notes",
   "price": "UGX. 10,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20History%20Lesson%20Notes.",
    "isFree": false,
   "pdflink": "P1_Scdkslience_Exam.pdf", // PDF file link
 },
@@ -381,7 +356,6 @@ const products = [
   "category": "holiday_packages",
   "name": "Christmas Holiday Package",
   "price": "UGX. 80,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Christmas%20Holiday%20Package.",
   "isFree": true,
   "pdflink": "P1_Sciedklsnce_Exam.pdf", // PDF file link
 },
@@ -389,7 +363,6 @@ const products = [
   "category": "weekly_homeworks",
   "name": "Week 1 Homeworks",
   "price": "UGX. 15,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Week%201%20Homeworks.",
    "isFree": false,
   "pdflink": "P1_Sciefjdkslnce_Exam.pdf", // PDF file link
 },
@@ -397,7 +370,6 @@ const products = [
   "category": "topical_questions",
   "name": "Chemistry Topical Questions",
   "price": "UGX. 25,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Chemistry%20Topical%20Questions.",
   "isFree": true,
   "pdflink": "P1_Scfjdkslience_Exam.pdf", // PDF file link
 },
@@ -405,7 +377,6 @@ const products = [
   "category": "learners_workbooks",
   "name": "Physics Learner's Workbook",
   "price": "UGX. 30,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Physics%20Learner's%20Workbook.",
    "isFree": false,
   "pdflink": "P1_Sciedjkslnce_Exam.pdf", // PDF file link
 },
@@ -413,7 +384,6 @@ const products = [
   "category": "lesson_plan_templates",
   "name": "Geography Lesson Plan Templates",
   "price": "UGX. 8,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Geography%20Lesson%20Plan%20Templates.",
   "isFree": true,
   "pdflink": "P1_Sfdslcience_Exam.pdf", // PDF file link
 },
@@ -421,7 +391,6 @@ const products = [
   "category": "ple_pamphlets",
   "name": "P6 PLE Preparation Pamphlets",
   "price": "UGX. 20,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20PLE%20Preparation%20Pamphlets.",
    "isFree": false,
   "pdflink": "P1_Scfdjkience_Exam.pdf", // PDF file link
 },
@@ -429,7 +398,6 @@ const products = [
   "category": "p7_topical_questions",
   "name": "P.7 English Topical Questions",
   "price": "UGX. 25,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.7%20English%20Topical%20Questions.",
    "isFree": false,
   "pdflink": "Pe_Exam.pdf", // PDF file link
 },
@@ -437,7 +405,6 @@ const products = [
   "category": "p7_special_sets_series",
   "name": "P7 Special Sets Series",
   "price": "UGX. 15,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Special%20Sets%20Series.",
   "isFree": true,
   "pdflink": "P1_Exam.pdf", // PDF file link
 },
@@ -445,7 +412,6 @@ const products = [
   "category": "interview_exams",
   "name": "Teacher's Interview Exams",
   "price": "UGX. 10,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Teacher's%20Interview%20Exams.",
    "isFree": false,
   "pdflink": "i.pdf", // PDF file link
 },
@@ -453,7 +419,6 @@ const products = [
   "category": "ple_spot_exams",
   "name": "PLE Spot Exams",
   "price": "UGX. 12,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20PLE%20Spot%20Exams.",
   "isFree": true,
   "pdflink": "P1_Science_Exam.pdf", // PDF file link
 },
@@ -461,7 +426,6 @@ const products = [
   "category": "book_cover_hardcopies",
   "name": "Book Cover Hardcopies",
   "price": "UGX. 200 and 100",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Book%20Cover%20Hardcopies.",
    "isFree": false,
   "pdflink": "P1_Science.pdf", // PDF file link
 },
@@ -469,7 +433,6 @@ const products = [
   "category": "teachers_interview_papers",
   "name": "Teacher's Interview Papers",
   "price": "UGX. 15,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20Teacher's%20Interview%20Papers.",
   "isFree": true,
   "pdflink": "cience_Exam.pdf", // PDF file link
 },
@@ -477,7 +440,6 @@ const products = [
   "category": "weekend_tests",
   "name": "Weekend Tests",
   "price": "UGX. 5,000 per class",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20Weekend%20Tests.",
    "isFree": false,
   "pdflink": "P1 Exam.pdf", // PDF file link
 },
@@ -485,7 +447,6 @@ const products = [
   "category": "exams",
   "name": "P.1 Science Exam",
   "price": "UGX. 60,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P.1%20Science%20Exam.",
   "isFree": false,
   "pdflink": "P1.pdf", // PDF file link
 },
@@ -493,7 +454,6 @@ const products = [
   "category": "schemes_of_work",
   "name": "P7 Mathematics Schemes of Work",
   "price": "UGX. 5,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P7%20Mathematics%20Schemes%20of%20Work.",
   "isFree": false,
   "pdflink": "Exam.pdf", // PDF file link
 },
@@ -501,7 +461,6 @@ const products = [
   "category": "textbooks",
   "name": "P3 English Textbook",
   "price": "UGX. 45,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P3%20English%20Textbook.",
   "isFree": false,
   "pdflink": "Science_Eam.pdf", // PDF file link
 },
@@ -509,7 +468,6 @@ const products = [
   "category": "lesson_notes",
   "name": "P6 History Lesson Notes",
   "price": "UGX. 10,000",
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20History%20Lesson%20Notes.",
   "isFree": false,
   "pdflink": "Science_Exam.pdf", // PDF file link
 },
@@ -517,7 +475,6 @@ const products = [
   "category": "holiday_packages",
   "name": "Christmas Holiday Package",
   "price": "UGX. 0", // Free item
-  "link": "https://api.whatsapp.com/send?phone=+256775787978&text=Hello%20OSEB%20I%20would%20like%20to%20buy%20the%20P6%20History%20Lesson%20Notes.",
   "isFree": true,
   "pdflink": "P1_Science_Exam.pdf", // PDF file link
 },
@@ -562,8 +519,6 @@ function renderProductCards() {
 
   storeProductsContainer.innerHTML = productCardsHTML;
 }
-
-
 
 // Function to render cards from items
 function renderCards(items) {
@@ -686,46 +641,43 @@ function scrollToTop() {
             renderCards(items);
         });
 
-// Define the generateCard function
-function generateCard(item) {
-    return `
+// When the DOM content is fully loaded, render the cards
+document.addEventListener('DOMContentLoaded', function () {
+      // Define your items array with necessary data
+      const items = products; // Assuming products array is defined elsewhere
+
+      // Render cards when the page loads
+      renderCards(items);
+    });
+
+    // Function to render cards from items
+    function renderCards(items) {
+      const app = document.getElementById('app');
+      let html = '';
+      items.forEach(item => {
+        html += generateCard(item);
+      });
+      app.innerHTML = html;
+    }
+
+    // Define the generateCard function
+    function generateCard(item) {
+      return `
         <div class="store-product ${item.category}">
             <div class="product-details">
                 <h2>${item.name}</h2>
                 <p>${item.price}</p>
-                <a href="${item.pdflink}" onclick="showPasswordModal('${item.link}')" download>
+                <a href="${item.pdflink}" onclick="showPasswordProtectedModal()" download>
                     <i class="fas fa-download"></i> <b>Order Now!</b>
                 </a>
             </div>
         </div>`;
-}
-
-// Function to show password modal
-function showPasswordModal(whatsappLink) {
-    $('#passwordModal').modal('show');
-    $('#whatsappLink').attr('href', whatsappLink);
-}
-
-
-    // Function to render cards from items
-    function renderCards(items) {
-        const app = document.getElementById('app');
-        let html = '';
-        items.forEach(item => {
-            html += generateCard(item);
-        });
-        app.innerHTML = html;
     }
 
-    // When the DOM content is fully loaded, render the cards
-    document.addEventListener('DOMContentLoaded', function () {
-        // Define your items array with necessary data
-        const items = products; // Assuming products array is defined elsewhere
-
-        // Render cards when the page loads
-        renderCards(items);
-    });
-
+    // Function to show password protected modal
+    function showPasswordProtectedModal() {
+      $('#passwordProtectedModal').modal('show');
+    }
     </script>
     <!-- <script src="script.js"></script> -->
     <center><br>
