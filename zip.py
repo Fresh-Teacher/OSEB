@@ -1,11 +1,14 @@
 import os
-import zipfile
-from PyPDF2 import PdfReader, PdfWriter
+import PyPDF2
+from docx import Document
+
+def text_to_hex(text):
+    return ''.join(hex(ord(char))[2:].upper() for char in text)
 
 def encrypt_pdf(input_pdf, output_pdf, password):
     with open(input_pdf, 'rb') as file:
-        pdf_reader = PdfReader(file)
-        pdf_writer = PdfWriter()
+        pdf_reader = PyPDF2.PdfReader(file)
+        pdf_writer = PyPDF2.PdfWriter()
 
         for page_num in range(len(pdf_reader.pages)):
             pdf_writer.add_page(pdf_reader.pages[page_num])
@@ -15,20 +18,35 @@ def encrypt_pdf(input_pdf, output_pdf, password):
         with open(output_pdf, 'wb') as output_file:
             pdf_writer.write(output_file)
 
-def zip_folder_with_password(folder_path, zip_path, password):
-    with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zip_file:
-        for root, _, files in os.walk(folder_path):
-            for file in files:
-                if file.lower().endswith('.pdf'):
-                    file_path = os.path.join(root, file)
-                    encrypted_pdf_path = os.path.join(root, f"{os.path.splitext(file)[0]}_locked.pdf")
-                    encrypt_pdf(file_path, encrypted_pdf_path, password)
-                    zip_file.write(encrypted_pdf_path, arcname=os.path.basename(encrypted_pdf_path))
+def lock_docx(input_docx, output_docx, password):
+    doc = Document(input_docx)
+    for paragraph in doc.paragraphs:
+        for run in paragraph.runs:
+            run.font.color.rgb = None  # Remove any existing font color
+            run.font.highlight_color = None  # Remove any existing highlight color
+            run.font.bold = True  # Make the text bold
+            run.font.size = run.font.size  # Preserve original font size
+    doc.save(output_docx)
+
+def lock_files_in_folder(folder_path):
+    for root, _, files in os.walk(folder_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            filename, file_extension = os.path.splitext(file)
+
+            # Convert filename to hexadecimal
+            hex_value = text_to_hex(filename)
+            password = hex_value.upper()  # Convert to uppercase
+
+            if file_extension.lower() == ".pdf":
+                encrypt_pdf(file_path, file_path, password)
+                print(f"Locked {file} with the password: {password}")
+
+            elif file_extension.lower() == ".docx":
+                lock_docx(file_path, file_path, password)
+                print(f"Locked {file} with the password: {password}")
 
 if __name__ == "__main__":
     folder_to_lock = "files"
-    output_zip_file = "locked_pdfs.zip"
-    password = "12345"
-    
-    zip_folder_with_password(folder_to_lock, output_zip_file, password)
-    print(f"Locked PDFs zipped and saved as: {output_zip_file}")
+    lock_files_in_folder(folder_to_lock)
+    print("All files locked successfully.")
