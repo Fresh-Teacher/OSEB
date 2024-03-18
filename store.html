@@ -247,20 +247,28 @@ footer.footer {
             <div class="filter-box">
               <select id="category-filter" onchange="filterCategory(event)">
                   <option value="all">All Products</option>
-                  <option value="p1_past_papers">P.1 Past Papers</option>
-                  <option value="p2_past_papers">P.2 Past Papers</option>
-                  <option value="p3_past_papers">P.3 Past Papers</option>
-                  <option value="p3_schemes_of_work">P.3 Schemes of Work</option>
-                  <option value="p4_past_papers">P.4 Past Papers</option>
-                  <option value="p5_past_papers">P.5 Past Papers</option>
-                  <option value="p5_schemes_of_work">P.5 Schemes of Work</option>
-                  <option value="p6_past_papers">P.6 Past Papers</option>
-                  <option value="p6_schemes_of_work">P.6 Schemes of Work</option>
-                  <option value="p7_past_papers">P.7 Past Papers</option>
-                  <option value="top_schemes_of_work">Top Schemes of Work</option>
-                  <option value="all_classes_schemes_of_work">All Classes Schemes of Work</option>
+                  <option value="p1_lesson_notes">P.1 Lesson Notes</option>
+                  <option value="p1_Examination_Papers">P.1 Examination Papers</option>
+                  <option value="p2_lesson_notes">P.2 Lesson Notes</option>
+                  <option value="p2_Examination_Papers">P.2 Examination Papers</option>
+                  <option value="p3_lesson_notes">P.3 Lesson Notes</option>
+                  <option value="p3_Examination_Papers">P.3 Examination Papers</option>
+                  <option value="p3_Schemes_of_Work">P.3 Schemes of Work</option>
+                  <option value="p4_lesson_notes">P.4 Lesson Notes</option>
+                  <option value="p4_Examination_Papers">P.4 Examination Papers</option>
+                  <option value="p5_lesson_notes">P.5 Lesson Notes</option>
+                  <option value="p5_Examination_Papers">P.5 Examination Papers</option>
+                  <option value="p5_Schemes_of_Work">P.5 Schemes of Work</option>
+                  <option value="p6_lesson_notes">P.6 Lesson Notes</option>
+                  <option value="p6_Examination_Papers">P.6 Examination Papers</option>
+                  <option value="p6_Schemes_of_Work">P.6 Schemes of Work</option>
+                  <option value="p7_Examination_Papers">P.7 Examination Papers</option>
+                  <option value="top_Schemes_of_Work">Top Schemes of Work</option>
+                  <option value="All_Classes_Schemes_of_Work">All Classes Schemes of Work</option>
               </select>
-          </div>
+            </div>
+            
+          
           
         </div>
     </header>
@@ -307,84 +315,126 @@ footer.footer {
 <script>
 const products = [
   {
-    "category": "p1_past_papers",
-    "name": "P.1 Past Papers",
+    "category": "p1_lesson_notes",
+    "name": "p.1 lesson notes",
     "price": "UGX. 60,000",
     "isFree": true,
     "pdflink": "p.1 lesson notes.zip"
   },
   {
-    "category": "p2_past_papers",
-    "name": "P.2 Past Papers",
+    "category": "p1_Examination_Papers",
+    "name": "p.1 Examination Papers",
+    "price": "UGX. 60,000",
+    "isFree": true,
+    "pdflink": "p.1 Examination Papers.zip"
+  },
+  {
+    "category": "p2_lesson_notes",
+    "name": "p.2 lesson notes",
     "price": "UGX. 5,000",
     "isFree": false,
     "pdflink": "p.2 lesson notes.zip"
   },
   {
-    "category": "p3_past_papers",
-    "name": "P.3 Past Papers",
+    "category": "p2_Examination_Papers",
+    "name": "p.2 Examination Papers",
+    "price": "UGX. 5,000",
+    "isFree": false,
+    "pdflink": "p.2 Examination Papers.zip"
+  },
+  {
+    "category": "p3_lesson_notes",
+    "name": "p.3 lesson notes",
     "price": "UGX. 45,000",
     "isFree": true,
     "pdflink": "p.3 lesson notes.zip"
   },
   {
-    "category": "p3_schemes_of_work",
-    "name": "P.3 Schemes of Work",
+    "category": "p3_Examination_Papers",
+    "name": "p.3 Examination Papers",
+    "price": "UGX. 45,000",
+    "isFree": true,
+    "pdflink": "p.3 Examination Papers.zip"
+  },
+  {
+    "category": "p3_Schemes_of_Work",
+    "name": "p.3 Schemes of Work",
     "price": "UGX. 10,000",
     "isFree": false,
     "pdflink": "p.3 Schemes of Work.zip"
   },
   {
-    "category": "p4_past_papers",
-    "name": "P.4 Past Papers",
+    "category": "p4_lesson_notes",
+    "name": "p.4 lesson notes",
     "price": "UGX. 10,000",
     "isFree": true,
     "pdflink": "p.4 lesson notes.zip"
   },
   {
-    "category": "p5_past_papers",
-    "name": "P.5 Past Papers",
+    "category": "p4_Examination_Papers",
+    "name": "p.4 Examination Papers",
+    "price": "UGX. 10,000",
+    "isFree": true,
+    "pdflink": "p.4 Examination Papers.zip"
+  },
+  {
+    "category": "p5_lesson_notes",
+    "name": "p.5 lesson notes",
     "price": "UGX. 15,000",
     "isFree": false,
     "pdflink": "p.5 lesson notes.zip"
   },
   {
-    "category": "p5_schemes_of_work",
-    "name": "P.5 Schemes of Work",
+    "category": "p5_Examination_Papers",
+    "name": "p.5 Examination Papers",
+    "price": "UGX. 15,000",
+    "isFree": false,
+    "pdflink": "p.5 Examination Papers.zip"
+  },
+  {
+    "category": "p5_Schemes_of_Work",
+    "name": "p.5 Schemes of Work",
     "price": "UGX. 25,000",
     "isFree": true,
     "pdflink": "p.5 Schemes of Work.zip"
   },
   {
-    "category": "p6_past_papers",
-    "name": "P.6 Past Papers",
+    "category": "p6_lesson_notes",
+    "name": "p.6 lesson notes",
     "price": "UGX. 30,000",
     "isFree": false,
     "pdflink": "p.6 lesson notes.zip"
   },
   {
-    "category": "p6_schemes_of_work",
-    "name": "P.6 Schemes of Work",
+    "category": "p6_Examination_Papers",
+    "name": "p.6 Examination Papers",
+    "price": "UGX. 30,000",
+    "isFree": false,
+    "pdflink": "p.6 Examination Papers.zip"
+  },
+  {
+    "category": "p6_Schemes_of_Work",
+    "name": "p.6 Schemes of Work",
     "price": "UGX. 8,000",
     "isFree": true,
     "pdflink": "p.6 Schemes of Work.zip"
   },
   {
-    "category": "p7_past_papers",
-    "name": "P.7 Past Papers",
+    "category": "p7_Examination_Papers",
+    "name": "p.7 Examination Papers",
     "price": "UGX. 20,000",
     "isFree": false,
-    "pdflink": "p.7 lesson notes.zip"
+    "pdflink": "p.7 Examination Papers.zip"
   },
   {
-    "category": "top_schemes_of_work",
-    "name": "Top Schemes of Work",
+    "category": "top_Schemes_of_Work",
+    "name": "top Schemes of Work",
     "price": "UGX. 25,000",
     "isFree": true,
     "pdflink": "top Schemes of Work.zip"
   },
   {
-    "category": "all_classes_schemes_of_work",
+    "category": "All_Classes_Schemes_of_Work",
     "name": "All Classes Schemes of Work",
     "price": "UGX. 12,000",
     "isFree": false,
@@ -392,8 +442,8 @@ const products = [
   }
 ];
 
-  
-// Function to render product cards
+
+ // Function to render product cards
 function renderProductCards() {
   const storeProductsContainer = document.getElementById('store-products');
   const productCardTemplate = document.getElementById('product-card-template').innerHTML;
@@ -411,11 +461,11 @@ function renderProductCards() {
     }
 
     // Capitalize item name
-    const name = product.name.toUpperCase();
+    const capitalizedProductName = product.name.toUpperCase();
 
     productCardsHTML += productCardTemplate
       .replace('{{ category }}', product.category)
-      .replace('{{ name }}', name)
+      .replace('{{ name }}', capitalizedProductName)
       .replace('{{ price }}', product.isFree ? "FREE" : product.price) // Replace price with "FREE" if item is free
       .replace('{{ button_text }}', buttonText)
       .replace('{{ button_link }}', buttonLink);
@@ -564,19 +614,31 @@ document.addEventListener('DOMContentLoaded', function () {
       app.innerHTML = html;
     }
 
-    // Define the generateCard function
-    function generateCard(item) {
-      return `
-        <div class="store-product ${item.category}">
-            <div class="product-details">
-                <h2>${item.name}</h2>
-                <p>${item.price}</p>
-                <a href="${item.pdflink}" onclick="showPasswordProtectedModal()" download>
-                    <i class="fas fa-download"></i> <b>Download Now</b>
-                </a>
-            </div>
-        </div>`;
-    }
+// Define the generateCard function
+function generateCard(item) {
+  // Function to capitalize the first letter of each word
+  function capitalizeFirstLetter(str) {
+    return str.replace(/\b\w/g, function (char) {
+      return char.toUpperCase();
+    });
+  }
+
+  // Capitalize the name
+  const capitalizedProductName = capitalizeFirstLetter(item.name);
+
+  // Return the HTML template with the capitalized name
+  return `
+    <div class="store-product ${item.category}">
+        <div class="product-details">
+            <h2>${capitalizedProductName}</h2>
+            <p>${item.price}</p>
+            <a href="${item.pdflink}" onclick="showPasswordProtectedModal()" download>
+                <i class="fas fa-download"></i> <b>Download Now</b>
+            </a>
+        </div>
+    </div>`;
+}
+
     
 
     // Function to show password protected modal
@@ -599,6 +661,3 @@ document.addEventListener('DOMContentLoaded', function () {
 </body>
 
 </html>
-
-
-
